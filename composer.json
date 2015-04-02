@@ -1,0 +1,37 @@
+{
+	"name":"fritzmg/contao-nivo-lightbox",
+	"description":"Nivo Lightbox for Contao",
+	"keywords":["contao", "nivo", "lightbox", "popup", "overlay", "responsive", "iframe", "ajax", "inline"],
+	"type":"contao-module",
+	"homepage":"http://www.inspiredminds.at",
+	"license":"GPL-2.0",
+	"authors":[
+		{
+			"name":"Fritz Michael Gschwantner",
+			"homepage":"http://www.inspiredminds.at",
+			"email":"fmg@inspiredminds.at",
+			"role":"Developer"
+		}
+	],
+	"support":{
+		"email":"fmg@inspiredminds.at",
+		"issues":"https://github.com/fritzmg/contao-nivo-lightbox/issues",
+		"source":"https://github.com/fritzmg/contao-nivo-lightbox",
+		"forum":"https://community.contao.org/de"
+	},
+	"require":{
+		"php":">=5.2",
+		"contao/core":"~3.0",
+		"contao-community-alliance/composer-installer":"*"
+	},
+    "replace": {
+        "contao-legacy/nivo_lightbox": "self.version"
+    },
+	"extra":{
+		"contao":{
+			"sources":{
+				"system/modules/nivo_lightbox":"system/modules/nivo_lightbox"
+			}
+		}
+	}
+}

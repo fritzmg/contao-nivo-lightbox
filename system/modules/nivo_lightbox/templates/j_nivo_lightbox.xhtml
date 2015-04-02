@@ -1,0 +1,47 @@
+<?php
+
+$GLOBALS['TL_CSS'][] = 'system/modules/nivo_lightbox/assets/nivo-lightbox.css||static';
+$GLOBALS['TL_CSS'][] = 'system/modules/nivo_lightbox/assets/themes/default/default.css||static';
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/nivo_lightbox/assets/nivo-lightbox.min.js|static';
+
+?>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function($)
+{
+    "use strict";
+
+    $(document).ready(function()
+    {
+        // get all lightbox links
+        var $links = $('a[data-lightbox]');
+
+        // process each lightbox link
+        $links.each( function()
+        {
+            // get the link
+            var $a = $(this);
+            
+            // check for ajax,inline,iframe in lightbox parameter
+            if( $a.data('lightbox').indexOf('ajax')   >= 0 ) $a.attr( 'data-lightbox-type', 'ajax'   );
+            if( $a.data('lightbox').indexOf('inline') >= 0 ) $a.attr( 'data-lightbox-type', 'inline' );
+            if( $a.data('lightbox').indexOf('iframe') >= 0 ) $a.attr( 'data-lightbox-type', 'iframe' );
+
+            // if no type has been defined at this point, and href is not an image, set type to iframe
+            if( typeof $a.attr( 'data-lightbox-type') === 'undefined' && !/\.(?:jpg|jpeg|gif|png)$/i.test( $a.attr('href') ) )
+                $a.attr( 'data-lightbox-type', 'iframe' );
+
+            // set the lightbox parameter as a gallery
+            if( $a.data('lightbox').length > 0 && 
+                !/(ajax|inline|iframe)/i.test( $a.data('lightbox') ) && 
+                typeof $a.attr( 'data-lightbox-gallery' ) === 'undefined' )
+                $a.attr( 'data-lightbox-gallery', $a.data('lightbox') );
+        });
+
+        // init nivo lightbox
+        $links.nivoLightbox();
+    });
+})(jQuery);
+/* ]]> */
+</script>
