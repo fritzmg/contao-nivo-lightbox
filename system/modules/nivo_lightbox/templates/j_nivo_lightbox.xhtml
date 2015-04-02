@@ -35,7 +35,8 @@ $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/nivo_lightbox/assets/nivo-lightbox
             // set the lightbox parameter as a gallery
             if( $a.attr('data-lightbox').length > 0 && 
                 !/(ajax|inline|iframe)/i.test( $a.attr('data-lightbox') ) && 
-                typeof $a.attr( 'data-lightbox-gallery' ) === 'undefined' )
+                typeof $a.attr( 'data-lightbox-gallery' ) === 'undefined' &&
+                $('a[data-lightbox="'+$a.attr('data-lightbox')+'"]').length > 1 )
                 $a.attr( 'data-lightbox-gallery', $a.attr('data-lightbox') );
         });
 
