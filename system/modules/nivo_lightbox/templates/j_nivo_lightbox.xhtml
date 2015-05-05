@@ -30,7 +30,7 @@ $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/nivo_lightbox/assets/nivo-lightbox
 
             // if no type has been defined at this point, and href is not an image, set type to iframe
             if( typeof $a.attr('data-lightbox-type') === 'undefined' && !/\.(?:jpg|jpeg|gif|png)$/i.test( $a.attr('href') ) )
-                $a.attr( 'data-lightbox-type', 'iframe' );
+                $a.attr('data-lightbox-type', 'iframe');
 
             // set the lightbox parameter as a gallery
             if( $a.attr('data-lightbox').length > 0 && 
