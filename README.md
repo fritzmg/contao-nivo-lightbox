@@ -35,4 +35,10 @@ Display some HTML element in the overlay:
 <a href="#some-element" data-lightbox="inline">...</a>
 ```
 
+In some cases you might need to force a href to be displayed as an image, e.g. if the href simply does not end with `jpeg`, `jpg`, `gif` or `png`.
+```html
+<a href="http://placehold.it/350x150" data-lightbox="image">...</a>
+<a href="http://placehold.it/350x150" data-lightbox-type="image">...</a>
+```
+
 All regular parameters mentioned in the [Nivo Lightbox documentation](http://docs.dev7studios.com/jquery-plugins/nivo-lightbox) should still work as well. If you do not provide any of this in your HTML source, the extension will open any non-image URLs in an iframe by default.

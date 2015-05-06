@@ -26,6 +26,7 @@ $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/nivo_lightbox/assets/nivo-lightbox
             if( $a.attr('data-lightbox').indexOf('ajax')   >= 0 ) $a.attr( 'data-lightbox-type', 'ajax'   );
             if( $a.attr('data-lightbox').indexOf('inline') >= 0 ) $a.attr( 'data-lightbox-type', 'inline' );
             if( $a.attr('data-lightbox').indexOf('iframe') >= 0 ) $a.attr( 'data-lightbox-type', 'iframe' );
+            if( $a.attr('data-lightbox').indexOf('image')  >= 0 ) $a.attr( 'data-lightbox-type', 'image'  );
 
             // if no type has been defined at this point, and href is not an image, set type to iframe
             if( typeof $a.attr('data-lightbox-type') === 'undefined' && !/\.(?:jpg|jpeg|gif|png)$/i.test( $a.attr('href') ) )
