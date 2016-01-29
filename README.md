@@ -35,7 +35,7 @@ Display some HTML element in the overlay:
 <a href="#some-element" data-lightbox="inline">...</a>
 ```
 
-In some cases you might need to force a href to be displayed as an image, e.g. if the href simply does not end with `jpeg`, `jpg`, `gif` or `png`.
+In some cases you might need to force a href to be displayed as an image, e.g. if the href simply does not end with `jpeg`, `jpg`, `gif` or `png`:
 ```html
 <a href="http://placehold.it/350x150" data-lightbox="image">...</a>
 <a href="http://placehold.it/350x150" data-lightbox-type="image">...</a>
