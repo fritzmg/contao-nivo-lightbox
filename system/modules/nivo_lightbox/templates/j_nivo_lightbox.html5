@@ -16,6 +16,7 @@ $GLOBALS['TL_CSS'][] = 'system/modules/nivo_lightbox/assets/themes/default/defau
 
       // process each lightbox link
       $links.each(function() {
+
           // get the link
           var $a = $(this);
 
@@ -26,7 +27,7 @@ $GLOBALS['TL_CSS'][] = 'system/modules/nivo_lightbox/assets/themes/default/defau
           if ($a.attr('data-lightbox').indexOf('image')  >= 0) $a.attr('data-lightbox-type', 'image' );
 
           // if no type has been defined at this point, and href is not an image, set type to iframe
-          if (typeof $a.attr('data-lightbox-type') === 'undefined' && !/\.(?:jpg|jpeg|gif|png)$/i.test( $a.attr('href'))) {
+          if (typeof $a.attr('data-lightbox-type') === 'undefined' && !/\.(?:jpg|jpeg|gif|png)$/i.test($a.attr('href'))) {
             $a.attr('data-lightbox-type', 'iframe');
           }
 
@@ -35,7 +36,7 @@ $GLOBALS['TL_CSS'][] = 'system/modules/nivo_lightbox/assets/themes/default/defau
               !/(ajax|inline|iframe)/i.test( $a.attr('data-lightbox') ) && 
               typeof $a.attr( 'data-lightbox-gallery' ) === 'undefined' &&
               $('a[data-lightbox="'+$a.attr('data-lightbox')+'"]').length > 1) {
-            $a.attr( 'data-lightbox-gallery', $a.attr('data-lightbox') );
+            $a.attr('data-lightbox-gallery', $a.attr('data-lightbox'));
           }
       });
 
