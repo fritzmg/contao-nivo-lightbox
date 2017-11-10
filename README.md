@@ -5,7 +5,7 @@
 Contao Nivo Lightbox
 =====================
 
-Contao extension to integrate the [Nivo Lightbox](http://docs.dev7studios.com/jquery-plugins/nivo-lightbox) overlay.
+Contao extension to integrate the [Nivo Lightbox](https://github.com/Codeinwp/Nivo-Lightbox-jQuery) overlay.
 
 ## Usage
 
@@ -18,7 +18,7 @@ If you want to use your own custom parameters, simply create your own `j_nivo_li
 // init nivo lightbox
 $links.nivoLightbox();
 ```
-Refer to the [Nivo Lightbox documentation](http://docs.dev7studios.com/jquery-plugins/nivo-lightbox) for all available parameters.
+Refer to the [Nivo Lightbox documentation](http://docs.themeisle.com/category/492-nivo-lightbox) for all available parameters.
 
 ## Types
 
@@ -45,4 +45,4 @@ In some cases you might need to force a href to be displayed as an image, e.g. i
 <a href="http://placehold.it/350x150" data-lightbox-type="image">...</a>
 ```
 
-All regular parameters mentioned in the [Nivo Lightbox documentation](http://docs.dev7studios.com/jquery-plugins/nivo-lightbox) should still work as well. If you do not provide any of this in your HTML source, the extension will open any non-image URLs in an iframe by default.
+All regular parameters mentioned in the [Nivo Lightbox documentation](http://docs.themeisle.com/category/492-nivo-lightbox) should still work as well. If you do not provide any of this in your HTML source, the extension will open any non-image URLs in an iframe by default.
