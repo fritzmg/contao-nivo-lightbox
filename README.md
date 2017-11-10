@@ -1,4 +1,4 @@
-[![](https://img.shields.io/maintenance/yes/2016.svg)](https://github.com/fritzmg/contao-nivo-lightbox)
+[![](https://img.shields.io/maintenance/yes/2017.svg)](https://github.com/fritzmg/contao-nivo-lightbox)
 [![](https://img.shields.io/packagist/v/fritzmg/contao-nivo-lightbox.svg)](https://packagist.org/packages/fritzmg/contao-nivo-lightbox)
 [![](https://img.shields.io/packagist/dt/fritzmg/contao-nivo-lightbox.svg)](https://packagist.org/packages/fritzmg/contao-nivo-lightbox)
 
