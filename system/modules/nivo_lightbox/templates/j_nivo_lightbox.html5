@@ -1,47 +1,46 @@
 <?php
 
-$GLOBALS['TL_CSS'][] = 'system/modules/nivo_lightbox/assets/nivo-lightbox.css||static';
-$GLOBALS['TL_CSS'][] = 'system/modules/nivo_lightbox/assets/themes/default/default.css||static';
-$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/nivo_lightbox/assets/nivo-lightbox.min.js|static';
+$GLOBALS['TL_CSS'][] = 'system/modules/nivo_lightbox/assets/nivo-lightbox.min.css';
+$GLOBALS['TL_CSS'][] = 'system/modules/nivo_lightbox/assets/themes/default/default.css';
 
 ?>
 
+<script src="system/modules/nivo_lightbox/assets/nivo-lightbox.min.js"></script>
 <script>
-(function($)
-{
-    "use strict";
+(function($) {
+  "use strict";
+  $(document).ready(function() {
 
-    $(document).ready(function()
-    {
-        // get all lightbox links
-        var $links = $('a[data-lightbox]');
+      // get all lightbox links
+      var $links = $('a[data-lightbox]');
 
-        // process each lightbox link
-        $links.each( function()
-        {
-            // get the link
-            var $a = $(this);
+      // process each lightbox link
+      $links.each(function() {
+          // get the link
+          var $a = $(this);
 
-            // check for ajax,inline,iframe in lightbox parameter
-            if( $a.attr('data-lightbox').indexOf('ajax')   >= 0 ) $a.attr( 'data-lightbox-type', 'ajax'   );
-            if( $a.attr('data-lightbox').indexOf('inline') >= 0 ) $a.attr( 'data-lightbox-type', 'inline' );
-            if( $a.attr('data-lightbox').indexOf('iframe') >= 0 ) $a.attr( 'data-lightbox-type', 'iframe' );
-            if( $a.attr('data-lightbox').indexOf('image')  >= 0 ) $a.attr( 'data-lightbox-type', 'image'  );
+          // check for ajax,inline,iframe in lightbox parameter
+          if ($a.attr('data-lightbox').indexOf('ajax')   >= 0) $a.attr('data-lightbox-type', 'ajax'  );
+          if ($a.attr('data-lightbox').indexOf('inline') >= 0) $a.attr('data-lightbox-type', 'inline');
+          if ($a.attr('data-lightbox').indexOf('iframe') >= 0) $a.attr('data-lightbox-type', 'iframe');
+          if ($a.attr('data-lightbox').indexOf('image')  >= 0) $a.attr('data-lightbox-type', 'image' );
 
-            // if no type has been defined at this point, and href is not an image, set type to iframe
-            if( typeof $a.attr('data-lightbox-type') === 'undefined' && !/\.(?:jpg|jpeg|gif|png)$/i.test( $a.attr('href') ) )
-                $a.attr('data-lightbox-type', 'iframe');
+          // if no type has been defined at this point, and href is not an image, set type to iframe
+          if (typeof $a.attr('data-lightbox-type') === 'undefined' && !/\.(?:jpg|jpeg|gif|png)$/i.test( $a.attr('href'))) {
+            $a.attr('data-lightbox-type', 'iframe');
+          }
 
-            // set the lightbox parameter as a gallery
-            if( $a.attr('data-lightbox').length > 0 && 
-                !/(ajax|inline|iframe)/i.test( $a.attr('data-lightbox') ) && 
-                typeof $a.attr( 'data-lightbox-gallery' ) === 'undefined' &&
-                $('a[data-lightbox="'+$a.attr('data-lightbox')+'"]').length > 1 )
-                $a.attr( 'data-lightbox-gallery', $a.attr('data-lightbox') );
-        });
+          // set the lightbox parameter as a gallery
+          if ($a.attr('data-lightbox').length > 0 && 
+              !/(ajax|inline|iframe)/i.test( $a.attr('data-lightbox') ) && 
+              typeof $a.attr( 'data-lightbox-gallery' ) === 'undefined' &&
+              $('a[data-lightbox="'+$a.attr('data-lightbox')+'"]').length > 1) {
+            $a.attr( 'data-lightbox-gallery', $a.attr('data-lightbox') );
+          }
+      });
 
-        // init nivo lightbox
-        $links.nivoLightbox();
-    });
+      // init nivo lightbox
+      $links.nivoLightbox();
+  });
 })(jQuery);
 </script>
